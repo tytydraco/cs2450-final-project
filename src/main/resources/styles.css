@@ -1,4 +1,23 @@
+/**
+Global CSS
+*/
+.label {
+    -fx-text-fill :#ffffff;
+}
+
+/**
+Right Pane CSS
+*/
+.right-pane {
+    -fx-background-color: #000000;
+    -fx-padding: 10;
+
+}
+.item-box {
+   -fx-background-color: #1a1a1a;
+    -fx-padding: 5;
+}
 .product-name {
-    -fx-font-size: 20pt;
-    -fx-font-family: "Segue UI Light";
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
 }
