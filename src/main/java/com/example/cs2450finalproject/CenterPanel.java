@@ -10,6 +10,6 @@ public class CenterPanel {
         return root;
     }
     public CenterPanel() {
-
+        root = new VBox();
     }
 }

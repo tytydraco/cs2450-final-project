@@ -10,6 +10,6 @@ public class TopPanel {
         return root;
     }
     public TopPanel() {
-
+        root = new VBox();
     }
 }
