@@ -16,13 +16,40 @@ import java.lang.reflect.Array;
 public class Filter {
     public VBox root;
     private boolean collapsed = false;
+    private final Button button;
+    private final Node[] filterItems;
 
     public Node getRoot() {
         return root;
     }
 
+    public void toggleCollapsed() {
+        if (!collapsed) {
+            collapsed = true;
+            button.setText("v");
+            root.getChildren().removeAll(filterItems);
+        } else {
+            collapsed = false;
+            button.setText("^");
+            root.getChildren().addAll(filterItems);
+        }
+    }
+
+    public void setCollapsed(boolean collapse) {
+        if (collapse) {
+            collapsed = true;
+            button.setText("v");
+            root.getChildren().removeAll(filterItems);
+        } else {
+            collapsed = false;
+            button.setText("^");
+            root.getChildren().addAll(filterItems);
+        }
+    }
+
     public Filter(String title, Node[] filterItems) {
-        Button button = new Button("^");
+        button = new Button("^");
+        this.filterItems = filterItems;
 
         Label label = new Label(title);
         label.setPrefWidth(200);
@@ -37,18 +64,8 @@ public class Filter {
         );
 
         button.setOnAction(event -> {
-            if (!collapsed) {
-                collapsed = true;
-                button.setText("v");
-                root.getChildren().removeAll(filterItems);
-            } else {
-                collapsed = false;
-                button.setText("^");
-                root.getChildren().addAll(filterItems);
-            }
+            toggleCollapsed();
         });
-
-
 
         root.getChildren().addAll(filterItems);
     }
