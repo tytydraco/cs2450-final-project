@@ -16,6 +16,8 @@ public class FilterItem {
 
     public FilterItem(String name, int count) {
         CheckBox checkBox = new CheckBox();
+        checkBox.setPrefWidth(10);
+        checkBox.setPrefHeight(10);
         Label label = new Label(name);
         Label countLabel = new Label("(" + count + ")");
 
@@ -23,6 +25,7 @@ public class FilterItem {
         countLabel.setTextFill(Color.WHITE);
 
         root = new HBox(
+                5,
                 checkBox,
                 label,
                 countLabel

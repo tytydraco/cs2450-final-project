@@ -17,14 +17,13 @@ public class TopPanel {
     private boolean allCollapsed = false;
 
     public TopPanel() {
-        Button resetButton = new Button("...");
-        resetButton.setPrefWidth(100);
+        Button resetButton = new Button("-");
+        resetButton.setPrefWidth(25);
+        resetButton.setPrefHeight(25);
 
         HBox resetHBox = new HBox(resetButton);
+        resetHBox.setPrefWidth(100);
         resetHBox.setAlignment(Pos.BASELINE_CENTER);
-
-        resetButton.setAlignment(Pos.BASELINE_CENTER);
-
 
         Filter categoryFilter = new Filter("Product Category", new Node[] {
                 new FilterItem("Graphics Cards", 113).getRoot(),
@@ -79,8 +78,10 @@ public class TopPanel {
             allCollapsed = !allCollapsed;
 
             if (allCollapsed) {
+                resetButton.setText("+");
                 root.setPrefHeight(0);
             } else {
+                resetButton.setText("-");
                 root.setPrefHeight(200);
             }
 
@@ -93,16 +94,17 @@ public class TopPanel {
         });
 
         root = new HBox(
-                30,
-                resetButton,
+                20,
+                //resetHBox,
                 categoryFilter.getRoot(),
                 gpuFilter.getRoot(),
                 manufacturerFilter.getRoot(),
                 screenSizeFilter.getRoot(),
                 nvTechFilter.getRoot()
         );
+        root.setAlignment(Pos.TOP_CENTER);
         root.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
-        root.setPrefHeight(200);
+        root.setPrefHeight(100);
 
         BorderPane.setAlignment(resetButton, Pos.BASELINE_CENTER);
     }

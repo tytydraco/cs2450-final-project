@@ -26,11 +26,11 @@ public class Filter {
     public void toggleCollapsed() {
         if (!collapsed) {
             collapsed = true;
-            button.setText("v");
+            button.setText("+");
             root.getChildren().removeAll(filterItems);
         } else {
             collapsed = false;
-            button.setText("^");
+            button.setText("-");
             root.getChildren().addAll(filterItems);
         }
     }
@@ -38,31 +38,33 @@ public class Filter {
     public void setCollapsed(boolean collapse) {
         if (collapse) {
             collapsed = true;
-            button.setText("v");
+            button.setText("+");
             root.getChildren().removeAll(filterItems);
         } else {
             collapsed = false;
-            button.setText("^");
+            button.setText("-");
             root.getChildren().addAll(filterItems);
         }
     }
 
     public Filter(String title, Node[] filterItems) {
-        button = new Button("^");
+        button = new Button("-");
         this.filterItems = filterItems;
 
         Label label = new Label(title);
+        label.setId("filterTitle");
+
         label.setPrefWidth(200);
         label.setTextFill(Color.WHITE);
         HBox hBox = new HBox(label, button);
 
-
         root = new VBox(
-                3,
+                5,
                 hBox,
                 new Separator()
         );
 
+        button.setPrefWidth(25);
         button.setOnAction(event -> {
             toggleCollapsed();
         });

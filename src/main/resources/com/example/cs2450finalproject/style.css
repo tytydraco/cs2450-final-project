@@ -1,0 +1,45 @@
+.root {
+    GREEN: #8dee44;
+}
+
+#title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-padding: 10 40 60 20;
+}
+
+.button {
+    -fx-background-color: GREEN;
+    -fx-background-radius: 2px;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #000000;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+#filterTitle {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.check-box .box {
+	-fx-background-color: #000000;
+	-fx-border-color: #ffffff;
+	-fx-border-radius: 2px;
+    -fx-background-insets: 0, 1;
+}
+.check-box .mark {
+ 	-fx-shape: "M1.73,12.91 8.1,19.28 22.79,4.59 22.79,1.59 8.1,16.28 1.73,9.91";
+}
+.check-box:selected .mark {
+	-fx-background-color: black;
+}
+.check-box:selected .box {
+	-fx-background-color: GREEN;
+	-fx-border-color: GREEN;
+}

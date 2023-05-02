@@ -16,25 +16,26 @@ public class Main extends Application {
     public void start(Stage stage) {
         BorderPane borderPane = new BorderPane();
 
-        LeftPanel leftPanel = new LeftPanel();
         TopPanel topPanel = new TopPanel();
         CenterPanel centerPanel = new CenterPanel();
 
 
-        borderPane.setLeft(leftPanel.getRoot());
         borderPane.setCenter(centerPanel.getRoot());
 
         Label title = new Label("Shop GeForce Graphics Cards, Laptops, and Systems");
-        title.setFont(new Font(30));
+        title.setId("title");
         title.setTextFill(Color.WHITE);
 
-        VBox topVbox = new VBox(title, topPanel.getRoot());
+        Region spacer = new Region();
+        spacer.setPrefHeight(30);
+
+        VBox topVbox = new VBox(title, topPanel.getRoot(), spacer);
         topVbox.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
 
         borderPane.setTop(topVbox);
 
-        Scene scene = new Scene(borderPane, 1000, 500);
-        stage.setTitle("NVIDIA");
+        Scene scene = new Scene(borderPane, 1920, 1080);
+        scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());        stage.setTitle("NVIDIA");
         stage.setScene(scene);
         stage.show();
     }
