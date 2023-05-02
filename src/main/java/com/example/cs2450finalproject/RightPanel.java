@@ -14,11 +14,9 @@ public class RightPanel {
 
 
 
-        ItemBox item1 = new ItemBox( "GeForce-RTX4080-Back.png", "Nvidia GeForce RTX 4080", 1199.00);
-
-        root = new VBox(item1.getRoot());
+        root = new VBox();
         root.getStyleClass().add("right-pane");
-        root.setPrefWidth(200);
+        root.setPrefWidth(280);
         root.setPrefHeight(450);
     }
 }

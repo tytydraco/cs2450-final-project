@@ -15,7 +15,9 @@ Right Pane CSS
 }
 .item-box {
    -fx-background-color: #1a1a1a;
-    -fx-padding: 5;
+    -fx-padding: 3;
+    -fx-border-color: #666666;
+    -fx-border-width: 1;
 }
 .product-name {
     -fx-font-size: 15;

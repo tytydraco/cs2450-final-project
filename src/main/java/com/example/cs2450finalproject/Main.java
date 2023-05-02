@@ -33,7 +33,7 @@ public class Main extends Application {
 
         borderPane.setTop(topVbox);
 
-        Scene scene = new Scene(borderPane, 1000, 500);
+        Scene scene = new Scene(borderPane, 1500, 720);
         scene.getStylesheets().add("styles.css");
         stage.setTitle("NVIDIA");
         stage.setScene(scene);
