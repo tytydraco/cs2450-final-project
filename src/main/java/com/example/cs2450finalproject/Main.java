@@ -9,7 +9,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class Main extends Application {
     @Override
@@ -19,10 +18,11 @@ public class Main extends Application {
         LeftPanel leftPanel = new LeftPanel();
         TopPanel topPanel = new TopPanel();
         CenterPanel centerPanel = new CenterPanel();
-
+        RightPanel rightPanel = new RightPanel();
 
         borderPane.setLeft(leftPanel.getRoot());
         borderPane.setCenter(centerPanel.getRoot());
+        borderPane.setRight(rightPanel.getRoot());
 
         Label title = new Label("Shop GeForce Graphics Cards, Laptops, and Systems");
         title.setFont(new Font(30));
@@ -34,6 +34,7 @@ public class Main extends Application {
         borderPane.setTop(topVbox);
 
         Scene scene = new Scene(borderPane, 1000, 500);
+        scene.getStylesheets().add("styles.css");
         stage.setTitle("NVIDIA");
         stage.setScene(scene);
         stage.show();
